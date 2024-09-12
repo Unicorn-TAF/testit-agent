@@ -1,0 +1,34 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Unicorn.Reporting.TestIT</id>
+    <version>$version$</version>
+    <title>Unicorn.Reporting.TestIT</title>
+    <authors>Vitaliy Dobriyan</authors>
+    <license type="expression">Apache-2.0</license>
+    <copyright>Copyright (c) Vitaliy Dobriyan 2024</copyright>
+    <projectUrl>https://unicorn-taf.github.io</projectUrl>
+    <repository type="git" url="https://github.com/unicorn-taf/testit-agent"/>
+    <icon>images\icon.png</icon>
+    <readme>docs\README.md</readme>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Unicorn.Reporting.TestIT is Unicorn test automation framework extension which allows to report your tests execution into TestIT TMS.
+      This package includes ready for use implementation of TestIT extension which is referenced by your tests.
+    </description>
+    <releaseNotes></releaseNotes>
+    <tags>unicorn-taf automation test-it reporting</tags>
+    <dependencies>
+      <group targetFramework="netstandard2.1">
+        <dependency id="TestIT.Adapter.Core" version="1.6.3"/>
+        <dependency id="Unicorn.Taf.Core" version="3.3.0"/>
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\icon.png" target="images\" />
+    <file src="..\README.md" target="docs\" />
+    <file src="bin\Release\netstandard2.1\unicorn.reporting.testit.dll" target="lib\netstandard2.1" />
+    <file src="bin\Release\netstandard2.1\unicorn.reporting.testit.xml" target="lib\netstandard2.1" />
+  </files>
+</package>
