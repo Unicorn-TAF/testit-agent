@@ -1,3 +1,6 @@
+![Nuget](https://img.shields.io/nuget/v/Unicorn.Reporting.TestIT?style=plastic)
+![Nuget](https://img.shields.io/nuget/dt/Unicorn.Reporting.TestIT?style=plastic)
+
 # TestIT reporting agent
 
 Unicorn has ability to generate powerful test results report using [TestIT TMS](https://testit.software)
@@ -21,6 +24,7 @@ Place **Tms.config.json** configuration file to directory with test assemblies. 
 ```
 then add code with reporting initialization to `[TestsAssembly]`
 ```csharp
+using Unicorn.Taf.Api;
 using Unicorn.Core.Testing.Tests.Attributes;
 using Unicorn.Reporting.TestIt;
 
@@ -29,12 +33,12 @@ namespace Tests
     [TestsAssembly]
     public static class TestsAssembly
     {
-        private static ReporterInstance reporter;
+        private static ITestReporter reporter;
 
         [RunInitialize]
         public static void InitRun()
         {
-            reporter = new ReporterInstance(); // initializes reporter and subscribes to TAF events.
+            reporter = new TestItReporter(); // initializes reporter and subscribes to TAF events.
         }
 
         [RunFinalize]
